@@ -1,0 +1,66 @@
+body {
+    font-family: cursive;
+    font-size: 14pt;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: gray;
+}
+
+h1{
+    color: darkblue;
+}
+div {
+    color:orange;
+    font-size: 40pt;
+    width: 90px;
+    height: 90px;
+    margin: auto;
+    border: 5px black;
+    border-style: solid;
+    background-image: url("background.jpg");
+    background-color: black;
+}
+
+#T1, #T5, #T9, #T13 {
+    background-position-x: 0px;  
+}
+#T2, #T6, #T10, #T14{
+    background-position-x: -100px;
+}
+#T3, #T7, #T11, #T15{
+    background-position-x: -200px;
+}
+#T4, #T8, #T12{
+    background-position-x: -300px;
+}
+#T1, #T2, #T3, #T4 {
+    background-position-y: 0px;  
+}
+#T5, #T6, #T7, #T8 {
+    background-position-y: -100px;  
+}
+#T9, #T10, #T11, #T12 {
+    background-position-y: -200px;  
+}
+#T13, #T14, #T15 {
+    background-position-y: -300px;  
+}
+
+#T16 {
+    background-color: gray;
+    background-image: none;
+}
+.hoverable:hover{
+    border-color: red;
+    color: red;
+    cursor: pointer;
+}
+#puzzlearea {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    width: 400px;
+    height: 400px;
+    border-style: hidden;    
+}
