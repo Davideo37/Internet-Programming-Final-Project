@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { Outlet, Link } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ function App() {
             paddingBottom: "1rem",
           }}
         >
-          <Link to="/fifteen">Fifteen Puzzle</Link> |{" "}
+          <Link to="/tictactoe">Tic-Tac-Toe</Link> |{" "}
           <Link to="/bible">Bible Verse</Link>
         </nav>
         <Outlet />
