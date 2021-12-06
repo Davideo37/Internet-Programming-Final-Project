@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Box, TextField } from "@mui/material"
+import { Link } from 'react-router-dom';
+import { Box, TextField, Button } from "@mui/material"
 import bible from './bible.svg';
 import "./bible.css";
 function Bible() {
@@ -24,9 +25,24 @@ function Bible() {
     getVerses();
   }, []);
 
+  let handleChangeBook = (event) => {
+    setBook(event.target.value);
+  };
+  let handleChangeChapter = (event) => {
+    setChapter(event.target.value);
+  };
+  let handleChangeVerse = (event) => {
+    setVerse(event.target.value)
+  }
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="Bible">
+      <header className="Bible-header">
+        <nav>
+          <Link to="/">Home</Link> |<Link to="/tictactoe">Tic-Tac-Toe</Link> |
+          <Link to="/bible">Bible Verse</Link>
+        </nav>
         <img src={bible} className="App-logo" alt="Bible" />
         <Box
           class="inputs"
@@ -37,20 +53,47 @@ function Bible() {
           noValidate
           autoComplete="off"
         >
-          <TextField className="search" id="book" color="primary" label="Book" value={book} />
           <TextField
+            className="search-fields"
+            id="book"
+            color="primary"
+            variant="outlined"
+            label="Book"
+            value={book}
+            onChange={handleChangeBook}
+            focused
+          />
+          <TextField
+            className="search-fields"
             id="chapter"
             color="primary"
+            variant="outlined"
             label="Chapter"
             value={chapter}
+            disabled={book === "votd"}
+            onChange={handleChangeChapter}
+            focused
           />
           <TextField
+            className="search-fields"
             id="verse"
             color="secondary"
-            variant="filled"
+            variant="outlined"
             label="Verse"
             value={verse}
+            disabled={book === "votd"}
+            onChange={handleChangeVerse}
+            focused
           />
+        </Box>
+        <Box>
+          <Button
+            className="submit-button"
+            onClick={getVerses}
+            variant="outlined"
+          >
+            Submit
+          </Button>
         </Box>
 
         <h1>
@@ -58,7 +101,7 @@ function Bible() {
           {/*Here I use a ternary operator '?' to only attempt to display the fetched data if the
               data exists currently (has been fetched). This prevents the page from throwing an error when the HTML
               tries to render before the request has returned. */}
-          The verse of the day is from:{" "}
+          {passage === "votd" ? "The verse of the day is from: " : ""}
           {request
             ? request[0].bookname +
               " " +

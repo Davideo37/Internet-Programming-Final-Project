@@ -1,4 +1,5 @@
 import './tictactoe.css';
+import { Link } from 'react-router-dom';
 const gameStatus = document.getElementById(".status");
 console.log(gameStatus)
 
@@ -104,24 +105,33 @@ function resetGame() {
 
 function TicTacToe() {
     return (
-      <section>
-        <h1 class="intro">Welcome to Tic-Tac-Toe!</h1>
-        <div class="board">
-                <div id="0" class="box" tabindex="1" onclick={handleMove}></div>
-          <div id="1" class="box" tabindex="1"></div>
-          <div id="2" class="box" tabindex="1"></div>
-          <div id="3" class="box" tabindex="1"></div>
-          <div id="4" class="box" tabindex="1"></div>
-          <div id="5" class="box" tabindex="1"></div>
-          <div id="6" class="box" tabindex="1"></div>
-          <div id="7" class="box" tabindex="1"></div>
-          <div id="8" class="box" tabindex="1"></div>
-        </div>
-            <h3 class="status">{gameActive ? ("It's " + curPlayer + "'s turn") : ("Game Over") }</h3>
-            <button id="reset" onclick={resetGame}>
-          RESTART
-        </button>
-      </section>
+      <header>
+        <nav>
+          <Link to="/">Home</Link> |
+          <Link to="/tictactoe">Tic-Tac-Toe</Link> |
+          <Link to="/bible">Bible Verse</Link>
+        </nav>
+        <section>
+          <h1 class="intro">Welcome to Tic-Tac-Toe!</h1>
+          <div class="board">
+            <div id="0" class="box" tabindex="1" onclick={handleMove}></div>
+            <div id="1" class="box" tabindex="1"></div>
+            <div id="2" class="box" tabindex="1"></div>
+            <div id="3" class="box" tabindex="1"></div>
+            <div id="4" class="box" tabindex="1"></div>
+            <div id="5" class="box" tabindex="1"></div>
+            <div id="6" class="box" tabindex="1"></div>
+            <div id="7" class="box" tabindex="1"></div>
+            <div id="8" class="box" tabindex="1"></div>
+          </div>
+          <h3 class="status">
+            {gameActive ? "It's " + curPlayer + "'s turn" : "Game Over"}
+          </h3>
+          <button id="reset" onclick={resetGame}>
+            RESTART
+          </button>
+        </section>
+      </header>
     );
 }
 

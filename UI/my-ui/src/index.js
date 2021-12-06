@@ -10,10 +10,9 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} >
+      <Route path="/" element={<App />} />
         <Route path="tictactoe" element={<TicTacToe />} />
         <Route path="bible" element={<Bible />} />
-      </Route>
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
