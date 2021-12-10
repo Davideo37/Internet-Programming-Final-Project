@@ -32,7 +32,12 @@ section {
     font-size: 60px;
 }
 
-.status {
+.box:hover {
+    border: 2px solid lime;
+    cursor: pointer;
+}
+
+#status {
     font-size: 50px;
     color: #d7a62f;
     margin: 20px auto;
@@ -48,6 +53,7 @@ button {
 }
 button:hover {
     border: 5px solid orange;
+    cursor: pointer;
 }
 
 header {

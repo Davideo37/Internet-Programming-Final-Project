@@ -9,7 +9,7 @@ function Bible() {
   const [verse, setVerse] = useState(null);
   const [request, setRequest] = useState(null);
   let passage = (book ==="votd") ? ("votd"):(book+"%20"+chapter+":"+verse);
-  const url = "https://labs.bible.org/api/?passage="+passage+"&type=json";
+  const url = "https://labs.bible.org/api/?passage=" + passage + "&type=json";
 
   /** Function to fetch the verse of the day from the API
   */
