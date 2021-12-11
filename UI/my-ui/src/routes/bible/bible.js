@@ -40,8 +40,17 @@ function Bible() {
     <div className="Bible">
       <header className="Bible-header">
         <nav>
-          <Link to="/">Home</Link> |<Link to="/tictactoe">Tic-Tac-Toe</Link> |
-          <Link to="/bible">Bible Verse</Link>
+          <Link className="App-link" to="/">
+            Home
+          </Link>{" "}
+          |
+          <Link className="App-link" to="/tictactoe">
+            Tic-Tac-Toe
+          </Link>{" "}
+          |
+          <Link className="App-link" to="/bible">
+            Bible Verse
+          </Link>
         </nav>
         <img src={bible} className="App-logo" alt="Bible" />
         <Box
@@ -62,6 +71,7 @@ function Bible() {
             value={book}
             onChange={handleChangeBook}
             focused
+            required
           />
           <TextField
             className="search-fields"
@@ -73,6 +83,7 @@ function Bible() {
             disabled={book === "votd"}
             onChange={handleChangeChapter}
             focused
+            required={book === "votd" ? false : true}
           />
           <TextField
             className="search-fields"
@@ -84,6 +95,7 @@ function Bible() {
             disabled={book === "votd"}
             onChange={handleChangeVerse}
             focused
+            required={book === "votd" ? false : true}
           />
         </Box>
         <Box>

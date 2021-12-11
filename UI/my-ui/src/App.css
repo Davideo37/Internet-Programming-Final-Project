@@ -13,8 +13,9 @@
   }
 }
 
+
 .App-header {
-  background-color: #282c34;
+  background-color: #363a72;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,10 +23,32 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  text-shadow: 0 0 3px #0000, 0 0 5px #0000FF;
+  background-image: url("background.jpg");
+  /*Image from https://wallpaperaccess.com/1920x1080-hd-nature*/
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
+.App-intro {
+  min-height: 20vh;
+  font-size: calc(20px +2vmin);
+  animation: appear-slide 5s ;
+}
+@keyframes appear-slide{
+        0%{opacity: 0; margin-bottom: -800px;}
+        50%{opacity: 1; margin-bottom: 0px;}
+      }
+
 .App-link {
-  color: #61dafb;
+  color: black; 
+}
+.App-link:hover {
+  border-color: #0000FF;
+}
+.App-link:visited {
+  color: orange;
+  border: 1px solid black
 }
 
 @keyframes App-logo-spin {
@@ -38,6 +61,8 @@
 }
 
 nav {
+  position: fixed;
+  top: 10px;
   border-bottom: solid 1px;
   padding-bottom: 1rem;
 }

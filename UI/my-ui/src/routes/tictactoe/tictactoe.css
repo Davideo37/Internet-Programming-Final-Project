@@ -10,6 +10,7 @@ section {
     font-size: 75px;
     color: #e2df39;
     margin: 10px auto;
+    text-shadow: 0 0 3px #0000, 0 0 5px #fd6805;
 }
 
 .board{
@@ -41,6 +42,7 @@ section {
     font-size: 50px;
     color: #d7a62f;
     margin: 20px auto;
+    text-shadow: 0 0 3px #0000, 0 0 5px #fd6805; 
 }
 
 button {
@@ -65,4 +67,5 @@ header {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 }

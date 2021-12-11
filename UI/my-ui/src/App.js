@@ -2,6 +2,7 @@
 import './App.css';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from "react";
+import { Box } from "@mui/material";
 const myUrl = "https://helloworld-kjernzpriq-ue.a.run.app/test/please";
 
 function App() {
@@ -21,11 +22,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <nav>
-          <Link to="/">Home</Link> |
-          <Link to="/tictactoe">Tic-Tac-Toe</Link> |
-          <Link to="/bible">Bible Verse</Link>
+          <Link className='App-link' to="/">Home</Link> |<Link className='App-link' to="/tictactoe">Tic-Tac-Toe</Link> |
+          <Link className="App-link" to="/bible">Bible Verse</Link>
         </nav>
-        Test
+        <Box className="App-intro">Welcome to my webpage!</Box>
+        <Box className="App-intro">Made by David Gurge</Box>
       </header>
     </div>
   );

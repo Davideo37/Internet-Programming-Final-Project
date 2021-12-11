@@ -95,8 +95,17 @@ function TicTacToe() {
   return (
     <header>
       <nav>
-        <Link to="/">Home</Link> |<Link to="/tictactoe">Tic-Tac-Toe</Link> |
-        <Link to="/bible">Bible Verse</Link>
+        <Link className="App-link" to="/">
+          Home
+        </Link>{" "}
+        |
+        <Link className="App-link" to="/tictactoe">
+          Tic-Tac-Toe
+        </Link>{" "}
+        |
+        <Link className="App-link" to="/bible">
+          Bible Verse
+        </Link>
       </nav>
       <section>
         <h1 class="intro">Welcome to Tic-Tac-Toe!</h1>
@@ -129,17 +138,14 @@ function TicTacToe() {
             {boardState[8]}
           </Box>
         </div>
-        <h3 id="status">
-        </h3>
-        <button id="restart">
-          RESTART
-        </button>
+        <h3 id="status"></h3>
+        <button id="restart">RESTART</button>
       </section>
     </header>
   );
 }
-// This line of code was based off a tutorial I watched at https://www.youtube.com/watch?v=Rzhcb4M9-0Q
-document.addEventListener("DOMContentLoaded", function() {
+
+window.onload = function() {
   gameStatus = document.getElementById("status");
   document.getElementById("restart").addEventListener("click", resetGame);
   console.log("Game" + gameStatus);
@@ -156,7 +162,8 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     })
   );
-})
+}
+
 
 
 export default TicTacToe;
