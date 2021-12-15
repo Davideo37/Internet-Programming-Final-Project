@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { Box, TextField, Button } from "@mui/material"
 import bible from './bible.svg';
 import "./bible.css";
+
 function Bible() {
-    const [book, setBook] = useState("votd");
+  const [book, setBook] = useState("votd");
   const [chapter, setChapter] = useState(null);
   const [verse, setVerse] = useState(null);
   const [request, setRequest] = useState(null);
@@ -19,12 +20,13 @@ function Bible() {
     setRequest(Verses);
   };
 
-  /** This useEffect calls the fetch function everytime the page is updated, to ensure the data is accurate
+  /** This useEffect calls the fetch function everytime the page is refreshed, to ensure the data is accurate
    */
   useEffect(() => {
     getVerses();
   }, []);
 
+  // These handleChange functions are used for the input textfields 
   let handleChangeBook = (event) => {
     setBook(event.target.value);
   };
@@ -110,9 +112,6 @@ function Bible() {
 
         <h1>
           {" "}
-          {/*Here I use a ternary operator '?' to only attempt to display the fetched data if the
-              data exists currently (has been fetched). This prevents the page from throwing an error when the HTML
-              tries to render before the request has returned. */}
           {passage === "votd" ? "The verse of the day is from: " : ""}
           {request
             ? request[0].bookname +
@@ -123,6 +122,9 @@ function Bible() {
             : ""}
         </h1>
         <p>
+          {/*Here I use a ternary operator '?' to only attempt to display the fetched data if the
+              data exists currently (has been fetched). This prevents the page from throwing an error when the HTML
+              tries to render before the request has returned. */}
           {request
             ? request.map((verse) => (
                 <>

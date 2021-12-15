@@ -3,11 +3,15 @@ import './App.css';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { Box } from "@mui/material";
-const myUrl = "https://helloworld-kjernzpriq-ue.a.run.app/test/please";
 
+const myUrl = "https://helloworld-kjernzpriq-ue.a.run.app/test/please";
+// Home page for my app
 function App() {
   const [page, setPage] = useState(null);
   
+  // This piece was part of my attempt at getting my own cloud API working, the idea was to just fetch
+  // a piece of json for proof of concept, but I couldn't figure out how to get Spring Boot to properly
+  // return json on a request
   const getUrl = async () => {
     const res = await fetch(myUrl);
     const j = await res.json;

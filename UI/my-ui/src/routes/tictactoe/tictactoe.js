@@ -92,6 +92,25 @@ function resetGame() {
 }
 
 function TicTacToe() {
+  // This section is what throws the errors
+  window.onload = function () {
+    gameStatus = document.getElementById("status");
+    document.getElementById("restart").addEventListener("click", resetGame);
+    console.log("Game" + gameStatus);
+    document
+      .querySelectorAll(".box")
+      .forEach((box) => box.addEventListener("click", handleMove));
+    document.querySelectorAll(".box").forEach((box) =>
+      box.addEventListener("keyup", function (event) {
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+          // Cancel the default action, if needed
+          event.preventDefault();
+          document.getElementById(box.id).click();
+        }
+      })
+    );
+  };
   return (
     <header>
       <nav>
@@ -142,25 +161,6 @@ function TicTacToe() {
         <button id="restart">RESTART</button>
       </section>
     </header>
-  );
-}
-
-window.onload = function() {
-  gameStatus = document.getElementById("status");
-  document.getElementById("restart").addEventListener("click", resetGame);
-  console.log("Game" + gameStatus);
-  document
-    .querySelectorAll(".box")
-  .forEach((box) => box.addEventListener("click", handleMove));
-  document.querySelectorAll(".box").forEach((box) =>
-    box.addEventListener("keyup", function (event) {
-      // Number 13 is the "Enter" key on the keyboard
-      if (event.keyCode === 13) {
-        // Cancel the default action, if needed
-        event.preventDefault();
-        document.getElementById(box.id).click();
-      }
-    })
   );
 }
 

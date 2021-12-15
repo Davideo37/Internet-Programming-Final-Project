@@ -36,7 +36,7 @@
   animation: appear-slide 5s ;
 }
 @keyframes appear-slide{
-        0%{opacity: 0; margin-bottom: -800px;}
+        0%{opacity: 0; margin-bottom: -50vmin;}
         50%{opacity: 1; margin-bottom: 0px;}
       }
 
