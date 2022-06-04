@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { Box } from "@mui/material";
 
-const myUrl = "https://helloworld-kjernzpriq-ue.a.run.app/test/please";
+const myUrl = "https://helloworld-kjernzpriq-ue.a.run.app/test/json";
 // Home page for my app
 function App() {
   const [page, setPage] = useState(null);

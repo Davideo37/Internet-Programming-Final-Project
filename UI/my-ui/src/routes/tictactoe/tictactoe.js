@@ -17,6 +17,7 @@ const winConditions = [
   [0, 4, 8], // Top left diagonal
   [2, 4, 6], // Top right diagonal
 ];
+
 /** Function to handle a box selection and update the board accordingly
  *
  * @param clickedBox the box clicked on in the grid
@@ -91,11 +92,21 @@ function resetGame() {
    document.querySelectorAll(".box").forEach((box) => (box.innerHTML = ""));
 }
 
+
+
+/** Main TicTacToe functional component  
+ * 
+ */
 function TicTacToe() {
-  // This section is what throws the errors
+  // This section throws some strange errors when rendering the board
+  // after navigating to the TicTacToe page. Most of the functionality
+  // of the game doesn't function properly until you refresh the page
+  // while navigated to the TicTacToe board. 
+  
   window.onload = function () {
+    console.log("Window.onload finished");
     gameStatus = document.getElementById("status");
-    document.getElementById("restart").addEventListener("click", resetGame);
+    //document.getElementById("restart").addEventListener("click", resetGame);
     console.log("Game" + gameStatus);
     document
       .querySelectorAll(".box")
@@ -127,38 +138,38 @@ function TicTacToe() {
         </Link>
       </nav>
       <section>
-        <h1 class="intro">Welcome to Tic-Tac-Toe!</h1>
-        <div class="board">
-          <Box id="0" class="box" tabindex="1" onClick={handleMove}>
+        <h1 className="intro">Welcome to Tic-Tac-Toe!</h1>
+        <div className="board">
+          <Box id="0" className="box" tabindex="1" onClick={handleMove}>
             {boardState[0]}
           </Box>
-          <Box id="1" class="box" tabindex="1" onClick={handleMove}>
+          <Box id="1" className="box" tabindex="1" onClick={handleMove}>
             {boardState[1]}
           </Box>
-          <Box id="2" class="box" tabindex="1" onClick={handleMove}>
+          <Box id="2" className="box" tabindex="1" onClick={handleMove}>
             {boardState[2]}
           </Box>
-          <Box id="3" class="box" tabindex="1" onClick={handleMove}>
+          <Box id="3" className="box" tabindex="1" onClick={handleMove}>
             {boardState[3]}
           </Box>
-          <Box id="4" class="box" tabindex="1" onClick={handleMove}>
+          <Box id="4" className="box" tabindex="1" onClick={handleMove}>
             {boardState[4]}
           </Box>
-          <Box id="5" class="box" tabindex="1" onClick={handleMove}>
+          <Box id="5" className="box" tabindex="1" onClick={handleMove}>
             {boardState[5]}
           </Box>
-          <Box id="6" class="box" tabindex="1" onClick={handleMove}>
+          <Box id="6" className="box" tabindex="1" onClick={handleMove}>
             {boardState[6]}
           </Box>
-          <Box id="7" class="box" tabindex="1" onClick={handleMove}>
+          <Box id="7" className="box" tabindex="1" onClick={handleMove}>
             {boardState[7]}
           </Box>
-          <Box id="8" class="box" tabindex="1" onClick={handleMove}>
+          <Box id="8" className="box" tabindex="1" onClick={handleMove}>
             {boardState[8]}
           </Box>
         </div>
         <h3 id="status"></h3>
-        <button id="restart">RESTART</button>
+        <button id="restart" onClick={resetGame}>RESTART</button>
       </section>
     </header>
   );
