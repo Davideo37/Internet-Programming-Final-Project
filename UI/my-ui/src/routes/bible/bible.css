@@ -1,13 +1,14 @@
-#book, #chapter, #verse {
-    color:red;
-
+#book,
+#chapter,
+#verse {
+  color: red;
 }
 .Bible {
   text-align: center;
 }
 
 .submit-button {
-    margin-top: 10em;
+  margin-top: 10em;
 }
 
 .Bible-header {
@@ -22,12 +23,12 @@
 }
 
 .Bible-logo {
-  height: 40vmin;
+  height: 30vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-.Bible-logo {
+  .Bible-logo {
     animation: Bible-logo-spin infinite 20s linear;
   }
 }

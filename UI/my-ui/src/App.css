@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 
 .App-header {
   background-color: #363a72;
@@ -23,7 +12,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  text-shadow: 0 0 3px #0000, 0 0 5px #0000FF;
+  text-shadow: 0 0 3px #0000, 0 0 5px #0000ff;
   background-image: url("background.jpg");
   /*Image from https://wallpaperaccess.com/1920x1080-hd-nature*/
   background-position: center;
@@ -33,22 +22,28 @@
 .App-intro {
   min-height: 20vh;
   font-size: calc(20px +2vmin);
-  animation: appear-slide 5s ;
+  animation: appear-slide 5s;
 }
-@keyframes appear-slide{
-        0%{opacity: 0; margin-bottom: -50vmin;}
-        50%{opacity: 1; margin-bottom: 0px;}
-      }
+@keyframes appear-slide {
+  0% {
+    opacity: 0;
+    margin-bottom: -50vmin;
+  }
+  50% {
+    opacity: 1;
+    margin-bottom: 0px;
+  }
+}
 
 .App-link {
-  color: black; 
+  color: black;
 }
 .App-link:hover {
-  border-color: #0000FF;
+  border-color: #0000ff;
 }
 .App-link:visited {
   color: orange;
-  border: 1px solid black
+  border: 1px solid black;
 }
 
 @keyframes App-logo-spin {

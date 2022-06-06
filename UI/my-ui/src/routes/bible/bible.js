@@ -1,32 +1,58 @@
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
-import { Box, TextField, Button } from "@mui/material"
-import bible from './bible.svg';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Box, TextField, Button } from "@mui/material";
+import bible from "./bible.svg";
 import "./bible.css";
 
 function Bible() {
   const [book, setBook] = useState("votd");
-  const [chapter, setChapter] = useState(null);
-  const [verse, setVerse] = useState(null);
+  const [chapter, setChapter] = useState("1");
+  const [verse, setVerse] = useState("1");
   const [request, setRequest] = useState(null);
-  let passage = (book ==="votd") ? ("votd"):(book+"%20"+chapter+":"+verse);
+  let passage = book === "votd" ? "votd" : book + "%20" + chapter + ":" + verse;
   const url = "https://labs.bible.org/api/?passage=" + passage + "&type=json";
 
-  /** Function to fetch the verse of the day from the API
-  */
-  const getVerses = async () => {
-    const res = await fetch(url);
-    const Verses = await res.json();
-    setRequest(Verses);
+
+  /** Function to fetch from the API
+   * 
+   * @param  {string} url - the url to be fetched
+   * @returns - The json fetched or an error 
+   */
+  const fetchJSON = (url) => {
+    return fetch(url).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      // If invalid response, throw an error
+      return res.text().then((text) => {
+        throw new Error(text);
+      });
+    });
   };
 
+  /** Function to set the verse(s) fetched from the API
+   */
+  const getVerses = async () => {
+    fetchJSON(url)
+      .then((json) => {
+        // do things with the response, like setting state:
+        setRequest(json);
+      })
+      .catch((error) => {
+        // do things with the error, like logging them:
+        console.error(error);
+        alert("Invalid passage: "+ book + " " + chapter + ":" + verse)
+      });
+  };
+
+  
   /** This useEffect calls the fetch function everytime the page is refreshed, to ensure the data is accurate
    */
   useEffect(() => {
     getVerses();
   }, []);
 
-  // These handleChange functions are used for the input textfields 
+  // These handleChange functions are used for the input textfields
   let handleChangeBook = (event) => {
     setBook(event.target.value);
   };
@@ -34,9 +60,8 @@ function Bible() {
     setChapter(event.target.value);
   };
   let handleChangeVerse = (event) => {
-    setVerse(event.target.value)
-  }
-  
+    setVerse(event.target.value);
+  };
 
   return (
     <div className="Bible">
@@ -54,7 +79,7 @@ function Bible() {
             Bible Verse
           </Link>
         </nav>
-        <img src={bible} className="App-logo" alt="Bible" />
+        <img src={bible} className="Bible-logo" alt="Bible" />
         <Box
           class="inputs"
           component="form"
@@ -112,7 +137,7 @@ function Bible() {
 
         <h1>
           {" "}
-          {passage === "votd" ? "The verse of the day is from: " : ""}
+          {book === "votd" ? "The verse of the day is from: " : ""}
           {request
             ? request[0].bookname +
               " " +

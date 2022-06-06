@@ -28,13 +28,11 @@ function handleMove(clickedBox) {
   if (boardState[boxID] === "" && gameActive) {
     // Make sure the box is empty and nobody has won
     boardState[boxID] = curPlayer;
-    console.log(boardState)
+    console.log(boardState);
     box.innerHTML = curPlayer;
     checkWinner();
   }
 }
-
-
 
 /** Switches the current player from X to O or vice versa
  *
@@ -67,13 +65,13 @@ function checkWinner() {
   }
 
   if (roundWon === true) {
-    gameStatus.innerHTML = (curPlayer + " has won!")
+    gameStatus.innerHTML = curPlayer + " has won!";
     gameActive = false;
     return;
   }
   if (!boardState.includes("")) {
     // If all squares are non-empty and there's no winner, draw
-    gameStatus.innerHTML = ("The match has ended in a draw!")
+    gameStatus.innerHTML = "The match has ended in a draw!";
     gameActive = false;
     return;
   }
@@ -84,25 +82,23 @@ function checkWinner() {
  *
  */
 function resetGame() {
-  console.log("Game reset")
+  console.log("Game reset");
   curPlayer = "X";
   boardState = ["", "", "", "", "", "", "", "", ""];
   gameStatus.innerHTML = "New Game! It's " + curPlayer + "'s turn";
   gameActive = true;
-   document.querySelectorAll(".box").forEach((box) => (box.innerHTML = ""));
+  document.querySelectorAll(".box").forEach((box) => (box.innerHTML = ""));
 }
 
-
-
-/** Main TicTacToe functional component  
- * 
+/** Main TicTacToe functional component
+ *
  */
 function TicTacToe() {
   // This section throws some strange errors when rendering the board
   // after navigating to the TicTacToe page. Most of the functionality
   // of the game doesn't function properly until you refresh the page
-  // while navigated to the TicTacToe board. 
-  
+  // while navigated to the TicTacToe board.
+
   window.onload = function () {
     console.log("Window.onload finished");
     gameStatus = document.getElementById("status");
@@ -169,12 +165,12 @@ function TicTacToe() {
           </Box>
         </div>
         <h3 id="status"></h3>
-        <button id="restart" onClick={resetGame}>RESTART</button>
+        <button id="restart" onClick={resetGame}>
+          RESTART
+        </button>
       </section>
     </header>
   );
 }
-
-
 
 export default TicTacToe;

@@ -1,61 +1,61 @@
 body {
-    font-family: "Trebuchet MS";
+  font-family: "Trebuchet MS";
 }
 
 section {
-    text-align: center;
+  text-align: center;
 }
 
-.intro{
-    font-size: 75px;
-    color: #e2df39;
-    margin: 10px auto;
-    text-shadow: 0 0 3px #0000, 0 0 5px #fd6805;
+.intro {
+  font-size: 75px;
+  color: #e2df39;
+  margin: 10px auto;
+  text-shadow: 0 0 3px #0000, 0 0 5px #fd6805;
 }
 
-.board{
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    width: 310px;
-    margin: 10px auto;
-    background-color: rgb(58, 57, 57);
-    border-style: hidden;
-    border-collapse: collapse;
-    color: lime;
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 310px;
+  margin: 10px auto;
+  background-color: rgb(58, 57, 57);
+  border-style: hidden;
+  border-collapse: collapse;
+  color: lime;
 }
 
 .box {
-    font-family:'Trebuchet MS';
-    width: 100px;
-    height: 100px;
-    border: 2px solid #da241d;
-    line-height: 100px;
-    font-size: 60px;
+  font-family: "Trebuchet MS";
+  width: 100px;
+  height: 100px;
+  border: 2px solid #da241d;
+  line-height: 100px;
+  font-size: 60px;
 }
 
 .box:hover {
-    border: 2px solid lime;
-    cursor: pointer;
+  border: 2px solid lime;
+  cursor: pointer;
 }
 
 #status {
-    font-size: 50px;
-    color: #d7a62f;
-    margin: 20px auto;
-    text-shadow: 0 0 3px #0000, 0 0 5px #fd6805; 
+  font-size: 50px;
+  color: #d7a62f;
+  margin: 20px auto;
+  text-shadow: 0 0 3px #0000, 0 0 5px #fd6805;
 }
 
 button {
-    background-color: #0e063d;
-    width: 250px;
-    height: 75px;
-    font-size: 25px;
-    color: #e2df39;
-    border: 2px solid #e2df39;
+  background-color: #0e063d;
+  width: 250px;
+  height: 75px;
+  font-size: 25px;
+  color: #e2df39;
+  border: 2px solid #e2df39;
 }
 button:hover {
-    border: 5px solid orange;
-    cursor: pointer;
+  border: 5px solid orange;
+  cursor: pointer;
 }
 
 header {
@@ -67,5 +67,4 @@ header {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  
 }
