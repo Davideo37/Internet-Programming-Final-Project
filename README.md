@@ -1,6 +1,13 @@
 # cps353-final-gurge
 
-# Project Goal:
+
+* Author: David Gurge
+
+* Class: CPS 353 Internet Programming
+
+* Professor: Dr. Russ Tuck
+
+* # Project Goal:
 Create an interesting and creative website with React, which meets the requirements below:
 - The project must use an external RESTful API.
 - For an A, the project must also use a RESTful API server you write, written in Java with Spring Boot and running on Google Cloud Run.
